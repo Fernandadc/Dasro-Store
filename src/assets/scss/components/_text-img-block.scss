@@ -1,20 +1,96 @@
 .text-img-block {
   display: flex;
   justify-content: space-between;
-  margin: 20px 0px;
-  animation: 2s animation;
+  margin: 20px 0;
   align-items: center;
   color: var(--title);
+  position: relative; // Adicionado para a animação funcionar corretamente
+  
   > img {
     height: 300px;
+    transition: all 0.3s ease; // Suaviza as mudanças de tamanho
+  }
+  
+  > strong {
+    text-align: center;
+    padding: 0 20px;
+    font-size: 2rem; // Tamanho base para desktop
+    line-height: 1.3;
+  }
+
+  // Tablet (768px a 1024px)
+  @media (max-width: 1024px) {
+    > img {
+      height: 250px;
+    }
+    
+    > strong {
+      font-size: 1.8rem;
+      padding: 0 15px;
+    }
+  }
+
+  // Tablet pequeno (600px a 767px)
+  @media (max-width: 767px) {
+    > img {
+      height: 200px;
+    }
+    
+    > strong {
+      font-size: 1.5rem;
+      padding: 0 10px;
+    }
+  }
+
+  // Mobile (até 599px)
+  @media (max-width: 599px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    
+    > img {
+      height: 150px;
+      order: -1; // Coloca as imagens no topo
+    }
+
+    .img-esq{
+      align-self:flex-start;
+    }
+
+    .img-dir{
+      align-self:flex-end;
+    }
+    
+    > strong {
+      font-size: 1.3rem;
+      padding: 0;
+      order: 1; // Texto no meio
+    }
+    
+    > img:last-child {
+      order: 2; // Última imagem no final
+    }
+  }
+
+  // Mobile muito pequeno (até 400px)
+  @media (max-width: 400px) {
+    > img {
+      height: 120px;
+    }
+    
+    > strong {
+      font-size: 1.1rem;
+    }
   }
 }
 
 @keyframes animation {
   from {
-    bottom: -60px;
+    transform: translateY(20px);
+    opacity: 0;
   }
   to {
-    bottom: 20px;
+    transform: translateY(0);
+    opacity: 1;
   }
 }

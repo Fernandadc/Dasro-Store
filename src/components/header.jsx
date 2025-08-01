@@ -1,27 +1,41 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faBars } from "@fortawesome/free-solid-svg-icons";
 import loc from "../assets/localization";
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 function Header() {
-  return (
-    <header>
-      <ul className="container-menu poppins-regular">
-        <li>
-          <Link to="/">{loc.commonDasro}</Link>
-        </li>
-        <li >
-          <Link to="/products">{loc.headerProducts}</Link>
-        </li>
-        <li>
-          <Link to="/aboutus">{loc.headerAbout}</Link>
-        </li>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-        <li>
-          <Link to="/contact">{loc.headerContact}</Link>
-        </li>
-      </ul>
+  return (
+    <header className="container-header">
+      <div className="header-content">
+        {/* Logo/Link principal - sempre visível */}
+        <Link to="/" className="logo-link poppins-regular">
+          {loc.commonDasro}
+        </Link>
+
+        {/* Botão do menu hamburguer (visível apenas em mobile) */}
+        <button 
+          className="menu-toggle" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? '✕' : '☰'}
+        </button>
+
+        {/* Itens do menu (exceto o primeiro) */}
+        <ul className={`nav-menu poppins-regular ${isMenuOpen ? 'open' : ''}`}>
+          <li>
+            <Link to="/products">{loc.headerProducts}</Link>
+          </li>
+          <li>
+            <Link to="/aboutus">{loc.headerAbout}</Link>
+          </li>
+          <li>
+            <Link to="/contact">{loc.headerContact}</Link>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }
