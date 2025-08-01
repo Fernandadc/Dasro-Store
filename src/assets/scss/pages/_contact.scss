@@ -1,0 +1,64 @@
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 80rem;
+  margin: auto;
+  margin-bottom: 10rem;
+  margin-top: 3rem;
+  .contact-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    > a {
+      color: var(--cardBorderxx);
+      margin-right: auto;
+    }
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: flex-start;
+    margin-top: 7rem;
+    > * {
+      margin: 10px;
+    }
+    input,
+    textarea {
+      background-color: var(--background);
+      width: 90%;
+      border: 0;
+      border-bottom: 1px solid #aaa;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--cardBorder);
+      letter-spacing: 0.11em;
+      
+
+      &::placeholder {
+        color: var(--menu);
+        font-size: 15px;
+      }
+
+      &:focus {
+        outline: 0;
+        border-bottom: 1px solid var(--contrast);
+        transition: 0.6s all ease;
+      }
+    }
+    > button {
+      border-style: none;
+      border: 0;
+      outline: 0;
+      color: white;
+      font-size: 15px;
+      font-weight: 300;
+      position: relative;
+      z-index: 3;
+      background: var(--contrast);
+      cursor: pointer;
+    }
+  }
+}

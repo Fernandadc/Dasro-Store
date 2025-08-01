@@ -1,0 +1,29 @@
+.container-header {
+  padding: 0 20px;
+  background-color: var(--menu);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--fontColor);
+  .crimson-text-regular {
+    &.common {
+      font-size: larger;
+      color: var(--fontColor);
+    }
+  }
+}
+
+.container-menu {
+  background-color: var(--menu);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding: 16px;
+  margin: 0;
+  .crimson-text-regular {
+    &.menu {
+      font-size: large;
+    }
+  }
+}

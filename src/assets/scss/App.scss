@@ -1,0 +1,15 @@
+@use 'base/shared' as *;
+@use 'components/product-card';
+@use 'components/product-balloon';
+@use 'components/text-img-block';
+@use 'layouts/footer';
+@use 'layouts/header';
+@use 'pages/homepage';
+@use 'pages/contact';
+@use 'pages/products-page';
+@use 'pages/about-us';
+
+body {
+  background-color: var(--background);
+  margin: unset;
+}

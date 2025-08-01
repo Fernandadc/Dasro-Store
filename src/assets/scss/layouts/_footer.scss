@@ -1,0 +1,22 @@
+.container-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 0;
+  padding-bottom: 5px;
+  background-color: var(--menu);
+  color: var(--fontColor);
+  .social-media {
+    display: flex;
+    gap: 0.7rem;
+    > a {
+      > svg {
+        height: 24px;
+      }
+    }
+  }
+  > a {
+    > img {
+      width: 100px;
+    }
+  }
+}

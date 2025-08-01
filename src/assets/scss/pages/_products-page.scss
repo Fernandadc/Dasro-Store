@@ -1,0 +1,39 @@
+.category-title {
+  font-size: x-large;
+  color: var(--title);
+  display: flex;
+  justify-content: center;
+  
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+
+.sub-list {
+  color: var(--fontColor);
+  background-color: var(--menu);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  gap: 20px;
+  padding: 16px;
+  margin: 0 0 30px;
+  border-top: 1px solid;
+  border-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #ffffff 50%,
+      transparent 100%
+    )
+    100% 1;
+}
+
+
